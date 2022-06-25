@@ -1,14 +1,46 @@
+<style>
+table, th, td {
+  border:1px solid black;
+  justify-content:'centre';
+}
+td{
+  align-items:'centre';
+   justify-content:'centre';
+   margin-left:20px;
+}
+</style>
+
 <p style="color: green"><%= notice %></p>
 
 <h1>Friends</h1>
 
-<div id="friends">
-  <% @friends.each do |friend| %>
-    <%= render friend %>
-    <p>
-      <%= link_to "Show this friend", friend %>
-    </p>
+<div id="friends" >
+
+
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Twitter</th>
+    <th>the_user_who created_this_friend</th>
+    <th></th>
+  </tr>
+
+   <% @friends.each do |friend| %>
+   <tr>
+    <td><%=friend.first_name%></td>
+    <td><%=friend.last_name%></td>
+    <td><%=friend.email%></td>
+    <td><%=friend.phone%></td>
+    <td><%=friend.twitter%></td>
+    <td><%=friend.user_id%></td>
+    <td> <%= link_to "Show this friend", friend %></td>
+    </tr>
   <% end %>
+</table>
 </div>
 
 <%= link_to "New friend", new_friend_path %>

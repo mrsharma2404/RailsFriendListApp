@@ -1,4 +1,4 @@
-<div id="<%= dom_id friend %>">
+<div id="<%= dom_id friend %>"  >
   <p>
     <strong>First name:</strong>
     <%= friend.first_name %>
@@ -22,6 +22,12 @@
   <p>
     <strong>Twitter:</strong>
     <%= friend.twitter %>
+    
+  </p>
+   <p>
+    <strong>the_user_who_created_this_friend:</strong>
+    <%= friend.user_id %>
+
   </p>
 
 </div>

@@ -10,10 +10,19 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    header here ...<br/><br/><br/>
+  <body style="margin:0px;">
+    <div style="width:100%; display:flex; flex-direction:row; background-color:grey; color:white">
+    <h2 style="margin-left:40px;"> <%= link_to "Friend App", "/friends" %></h4>
+    <h4 style="margin-left:240px; color:white;"><%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %></h4>
+  
+    <h4 style="margin-left:40px;"> <%= link_to "User Details", "/users/edit" %></h4>
+    <h4 style="margin-left:40px;"> <%= link_to "Sign In", "/users/sign_in" %></h4>
+    
+    </div>
+    
+    <br/><br/><br/>
     <%= yield %> 
     <br/> <br/> <br/>
-    footer here... <br/>
+    
   </body>
 </html>
